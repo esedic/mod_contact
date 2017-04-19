@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.5" method="upgrade" client="site">
+    <name>Kontakti</name>
+    <version>1.0.0.</version>
+    <description>Koktaktni podatki za salon.</description>
+    <creationDate>June 2016</creationDate>
+    <copyright>Copyright (C) Spletodrom</copyright>
+    <license>GNU General Public License v2 or later</license>
+    <author>Spletodrom</author>
+    <authorEmail>info@spletodrom.com</authorEmail>
+    <authorUrl>http://spletodrom.com</authorUrl>
+    <files>
+        <filename module="mod_contact">mod_contact.php</filename>
+        <folder>elements</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/modules/mod_contact/elements">
+                <field name="salon" type="text" default="" label="Salon" description="Salon" class="input-xlarge" />
+                <field name="kraj" type="text" default="" label="Kraj" description="Kraj" class="input-xlarge" />
+                <field name="telefon" type="text" default="" label="Telefon" description="Telefon" />
+                <field name="email" type="email" default="" label="Email" description="Email" validate="email" />
+                <field name="delavnik" type="text" default="" label="Delovni čas" description=""  class="input-xlarge"/>
+                <field name="widgetkit" type="widget" default="" label="Widget" description="Select a Widget to display" required="false" />
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+                <field
+                    name="cache"
+                    type="list"
+                    default="1"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option
+                        value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option
+                        value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field
+                    name="cache_time"
+                    type="text"
+                    default="900"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="static">
+                    <option
+                        value="static"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
